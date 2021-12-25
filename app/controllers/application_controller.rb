@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
 	
   ErrorMapper.map_errors!({
 			"ActiveRecord::RecordNotFound" => "JsonapiErrorsHandler::Errors::NotFound",
-			"ActiveRecord::ActiveRecord::RecordInvalid" => "JsonapiErrorsHandler::Errors::Invalid",
+			"ActiveRecord::RecordInvalid" => "JsonapiErrorsHandler::Errors::Invalid",
 			"UserAuthenticator::AuthenticationError" => "JsonapiErrorsHandler::Errors::Unauthorized",
 			"ApplicationController::AuthorizationError" => "JsonapiErrorsHandler::Errors::Forbidden"
   })
