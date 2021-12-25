@@ -10,21 +10,19 @@ RSpec.describe ArticlesController do
 			article = create :article
 
 			get '/articles'
+			
+			expected = json_data.first
 
-			#extracted to helper
-			# body = JSON.parse(response.body).deep_symbolize_keys
-		
-			expect(json_data).to eq(
-			  [{
-					id: article.id.to_s,
-					type: 'article',
-					attributes: {
-						title: article.title,
-						content: article.content,
-						slug: article.slug
-					}
-				}]
-			)
+			expect(json_data.length).to eq(1)
+			aggregate_failures do
+				expect(expected[:id]).to eq(article.id.to_s)
+				expect(expected[:type]).to eq('article')
+				expect(expected[:attributes]).to eq(
+					title: article.title,
+					content: article.content,
+					slug: article.slug
+				)
+			end
 		end
 	end
 end
