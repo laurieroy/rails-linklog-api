@@ -39,5 +39,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+gem 'jsom-pagination', '~> 0.1.3'
 gem 'jsonapi-serializer'
 
