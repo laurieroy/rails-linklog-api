@@ -43,3 +43,4 @@ gem 'jsom-pagination', '~> 0.1.3'
 gem 'jsonapi_errors_handler'
 gem 'jsonapi-serializer'
 
+gem 'octokit', '~> 4.0'
